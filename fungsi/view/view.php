@@ -1,7 +1,7 @@
 <?php
-/*
-* PROSES TAMPIL
-*/
+
+// PROSES TAMPIL
+
 class view
 {
     protected $db;
@@ -210,6 +210,31 @@ class view
         $row = $this-> db -> prepare($sql);
         $row -> execute();
         $hasil = $row -> fetchAll();
+        return $hasil;
+    }
+
+    public function detailPembayaran($id) 
+    {
+        $id = intval($id);
+        $sql = "SELECT tp.*, tu.nm_member as nama_member FROM pembayaran tp
+        LEFT JOIN login tu ON tu.id_member = tp.id_member
+        WHERE id = ?";
+        $exec = $this->db->prepare($sql);
+        $exec->execute([$id]);
+
+        $hasil = $exec->fetch(PDO::FETCH_ASSOC);
+        return $hasil;
+    }
+
+    public function getPenjualanByIdPembelian($id)
+    {
+        $id = intval($id);
+        $sql = "SELECT tn.*, tb.nama_barang as nama_barang, tb.merk as merk, tb.harga as harga_brg FROM nota tn 
+        LEFT JOIN barang tb ON tb.id_barang = tn.id_barang
+        WHERE tn.id_pembayaran = ?";
+        $exec = $this->db->prepare($sql);
+        $exec->execute([$id]);
+        $hasil = $exec->fetchAll(PDO::FETCH_ASSOC);
         return $hasil;
     }
 

@@ -27,15 +27,7 @@ if (!empty($_SESSION['admin'])) {
         $rowI = $config -> prepare($sqlI);
         $rowI -> execute($dataI);
         $hasil = $rowI -> fetch();
-
-        /*$jml = $_GET['jml'] + $hasil['stok'];
-
-        $dataU[] = $jml;
-        $dataU[] = $_GET['brg'];
-        $sqlU = 'UPDATE barang SET stok =? where id_barang=?';
-        $rowU = $config -> prepare($sqlU);
-        $rowU -> execute($dataU);*/
-
+        
         $id = $_GET['id'];
         $data[] = $id;
         $sql = 'DELETE FROM penjualan WHERE id_penjualan=?';
@@ -52,7 +44,7 @@ if (!empty($_SESSION['admin'])) {
     }
     
     if (!empty($_GET['laporan'])) {
-        $sql = 'DELETE FROM nota';
+        $sql = 'DELETE FROM pembayaran';
         $row = $config -> prepare($sql);
         $row -> execute();
         echo '<script>window.location="../../index.php?page=laporan&remove=hapus"</script>';

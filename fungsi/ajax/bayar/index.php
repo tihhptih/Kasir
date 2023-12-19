@@ -12,7 +12,7 @@ function getId()
 if (!empty($bayar)) {
     $hitung = $bayar - $total;
     if ($bayar >= $total) {
-        $id_member = $_POST['id_member'];
+        $id_member = $_POST['id_member'][0];
         $id_user = intval(getId());
 
         // pembyrn
@@ -32,7 +32,7 @@ if (!empty($bayar)) {
 
         $id_barang = $_POST['id_barang'];
         $jumlah = $_POST['jumlah'];
-        $total = $_POST['total'];
+        $total = $_POST['total1'];
         $tgl_input = $_POST['tgl_input'];
         $periode = $_POST['periode'];
         $jumlah_dipilih = count($id_barang);
@@ -62,6 +62,7 @@ if (!empty($bayar)) {
         // echo '<script>alert("Belanjaan Berhasil Di Bayar !");</script>';
         echo json_encode([
             "status" => true,
+            "id_pembayaran" => $id_pembayaran,
             "data" => $hitung
         ]);
     } else {

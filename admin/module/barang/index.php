@@ -136,7 +136,7 @@
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content" style=" border-radius:0px;">
-                    <div class="modal-header" style="background:#285c64;color:#fff;">
+                    <div class="modal-header" style="background:#2b495f ;color:#fff;">
                         <h5 class="modal-title"><i class="fa fa-plus"></i> Tambah Barang</h5>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>

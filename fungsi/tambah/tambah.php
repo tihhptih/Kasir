@@ -80,8 +80,7 @@ if (!empty($_SESSION['admin'])) {
             echo "ok";
             
         } else {
-            // echo '<script>alert("Stok Barang Anda Telah Habis !");
-			// 		window.location="../../index.php?page=jual#keranjang"</script>';
+
         }
     }
 }

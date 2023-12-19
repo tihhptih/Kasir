@@ -139,8 +139,7 @@
  								<td><input type="text" id="kembalian" name="kembalian" class="form-control" value="<?php echo $hitung; ?>"></td>
  								<td></td>
  								<td>
-								 <a href="print.php?nm_member=<?php echo $_SESSION['admin']['nm_member'];?>
-									&bayar=<?php echo $bayar;?>&kembali=<?php echo $hitung;?>" target="_blank">
+								 <a target="_blank" id="link-print">
 									<button class="btn btn-secondary">
 										<i class="fa fa-print"></i> Print Untuk Bukti Pembayaran
 									</button></a>
@@ -184,7 +183,10 @@
 					`)
 					$("input[name='bayar']").attr("disabled", true);
 					$("#kembalian").val(res.data);
+					$("#link-print").attr("href", "print.php?id_pembayaran="+res.id_pembayaran);
 				}else {
+					$("#kembalian").val('');
+					$("#link-print").removeAttr("href");
 				}
 			}
 		});

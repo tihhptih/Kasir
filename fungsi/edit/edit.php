@@ -3,7 +3,6 @@ session_start();
 if (!empty($_SESSION['admin'])) {
     require '../../config.php';
 
-
     if (!empty($_GET['kategori'])) {
         $nama= htmlentities($_POST['kategori']);
         $id= htmlentities($_POST['id']);
@@ -66,14 +65,10 @@ if (!empty($_SESSION['admin'])) {
         if ($_FILES['foto']["error"] > 0) {
             $output['error']= "Error in File";
         } elseif (!in_array($_FILES['foto']["type"], $allowedImageType)) {
-            // echo "You can only upload JPG, PNG and GIF file";
-            // echo "<font face='Verdana' size='2' ><BR><BR><BR>
-            // 		<a href='../../index.php?page=user'>Back to upform</a><BR>";
+            // hanya bisa jpg, png dan gif
             echo '<script>alert("You can only upload JPG, PNG and GIF file");window.location="../../index.php?page=user"</script>';
         } elseif (round($_FILES['foto']["size"] / 1024) > 4096) {
-            // echo "WARNING !!! Besar Gambar Tidak Boleh Lebih Dari 4 MB";
-            // echo "<font face='Verdana' size='2' ><BR><BR><BR>
-            // 		<a href='../../index.php?page=user'>Back to upform</a><BR>";
+            // gambar tidak blh lebih dr 4mb!!
             echo '<script>alert("WARNING !!! Besar Gambar Tidak Boleh Lebih Dari 4 MB");window.location="../../index.php?page=user"</script>';
         } else {
             $dir = '../../assets/img/user/';
@@ -153,6 +148,4 @@ if (!empty($_SESSION['admin'])) {
 					window.location="../../index.php?page=jual#keranjang"</script>';
         }
     }
-
-   
 }

@@ -34,9 +34,9 @@
 									<div class="table-responsive">
 										<table class="table table-bordered w-100 table-sm" id="example1">
 											<thead>
+												</a>
 							<a  style="padding-right:2pc;" href="fungsi/hapus/hapus.php?laporan=jual" onclick="javascript:return confirm('Data Laporan akan di Hapus ?');">
-										<button class="btn btn-danger">RESET</button>
-									</a>
+							<button class="btn btn-danger">RESET</button>
 							<tr style="background:#187bcd;color:#EEEDEA;">
 								<th> ID</th>
 								<th> ID Member</th>
@@ -50,48 +50,9 @@
 								<th style="width:10%;"> Total</th> -->
 							</tr>
 						</thead>
-						<tbody>
-							<?php 
-								$no=1; 
-								if(!empty($_GET['cari'])){
-									$periode = $_POST['bln'].'-'.$_POST['thn'];
-									$no=1; 
-									$jumlah = 0;
-									$bayar = 0;
-									$hasil = $lihat -> periode_jual($periode);
-								}elseif(!empty($_GET['hari'])){
-									$hari = $_POST['hari'];
-									$no=1; 
-									$jumlah = 0;
-									$bayar = 0;
-									$hasil = $lihat -> hari_jual($hari);
-								}else{
-									$hasil = $lihat -> jual();
-								}
-							?>
-							<?php 
-								$bayar = 0;
-								$jumlah = 0;
-								$modal = 0;
-								foreach($hasil as $isi){ 
-									$bayar += $isi['total'];
-									$jumlah += $isi['jumlah'];
-							?>
-							<tr>
-								<td><?php echo $no;?></td>
-								<td><?php echo $isi['id_member'];?></td>
-								<td><?php echo $isi['id_user'];?></td>
-								<td><?php echo $isi['harga_byr'];?> </td>
-								<td>Rp.<?php echo number_format($isi['total']);?></td>
-								<td><?php echo $isi['kembali'];?></td>
-								<td><?php echo $isi['tanggal_input'];?></td>
-								<td> <a href="print.php?nm_member=<?php echo $_SESSION['admin']['nm_member'];?>
-									&bayar=<?php echo $bayar;?>&kembali=<?php echo $hitung;?>" target="_blank">
-									<button class="btn btn-secondary">
-										<i class="fa fa-print"></i>Print
-									</button></a> </td>
-							</tr>
-							<?php $no++; }?>				
+						<tbody id="result-laporan">
+							<!-- ajax -->
+							
 						</tbody>
 					</table>
 				</div>
@@ -101,4 +62,21 @@
  </div>
 	</div>						
 </div>
-     
+
+<script>
+	$(document).ready(() => {
+		loadLaporan()
+	});
+
+	const loadLaporan = () => {
+		$.ajax({
+			type: "GET",
+			url: "/kasir_tih/fungsi/ajax/show/getDataLaporan.php",
+			success: (response) => {
+				const ress = JSON.parse(response)
+				console.log(ress)
+				$("#result-laporan").html(ress.data[0])
+			}
+		});
+	}
+</script>
