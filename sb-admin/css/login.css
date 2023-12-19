@@ -1,0 +1,21 @@
+body {margin:0;}
+   #latar {
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      background-image: url(seru.png);
+      height:10%;
+   }
+   .tembus {
+      position:relative;
+      top:50%;
+      background-color: rgba(0, 0, 0, 0.267);
+      height:200px;
+      width:400PX;
+      display:flex;
+      justify-content:center;
+   }
+   .teks {text-align:center; font-family:Arial;}
+   h1 {font-size:40px; color:#009900;}
+   h3 {font-size:24px; color:#2288ee;}
+   p {color:#f55;}
