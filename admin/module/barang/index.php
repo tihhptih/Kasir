@@ -37,7 +37,7 @@ if ($r > 0) {
         <div class="row">
             <!-- Trigger the modal with a button -->
             <div class="">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                <button type="button" class="btn btn-primary" style="background-color:#0096FF; color:black;" data-bs-toggle="modal" data-bs-target="#modal">
                     Insert Data
                 </button>
             </div>
@@ -51,7 +51,7 @@ if ($r > 0) {
                     <table class="table table-bordered table-striped " id="example1">
 
                         <thead>
-                            <tr class="bg-primary text-white lurus">
+                            <tr class="background-color:#FFFFF text-black lurus">
                                 <th>No.</th>
                                 <th>ID Barang</th>
                                 <th>Kategori</th>
@@ -84,7 +84,7 @@ if ($r > 0) {
                                     <td><?php echo $isi['nama_barang']; ?></td>
                                     <td><?php echo $isi['merk']; ?></td>
                                     <td>
-                                        <?php if ($isi['stok'] == '0') { ?>
+                                        <?php if ($isi['stok'] == '0') { ?>     
                                             <button class="btn btn-danger"> Habis</button>
                                         <?php } else { ?>
                                             <?php echo $isi['stok']; ?>
@@ -111,7 +111,7 @@ if ($r > 0) {
                                         <?php } else { ?>
 
                                             <a href="index.php?page=barang/edit&barang=<?php echo $isi['id_barang']; ?>"><button class="btn btn-warning btn-xs">Edit</button></a>
-                                            <a href="fungsi/hapus/hapus.php?barang=hapus&id=<?php echo $isi['id_barang']; ?>" onclick="javascript:return confirm('Hapus Data barang ?');"><button class="btn btn-warning btn-xs">Hapus</button></a>
+                                            <a href="fungsi/hapus/hapus.php?barang=hapus&id=<?php echo $isi['id_barang']; ?>" onclick="javascript:return confirm('Hapus Data barang ?');"><button class="btn btn-danger btn-xs">Hapus</button></a>
                                         <?php } ?>
                                 </tr>
                             <?php
@@ -194,7 +194,7 @@ if ($r > 0) {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button  class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>

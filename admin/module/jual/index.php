@@ -14,14 +14,14 @@
  <div class="row">
  	<div class="col-sm-6">
  		<div class="card card-primary mb-3">
- 			<div class="card-header bg-primary text-white">
+ 			<div class="card-header text-white" style="background-color:#000084">
  				<h5><i class="fa fa-list"></i> Menu Produk</h5>
  			</div>
  			<div class="card-footer">
  				<div class="table-responsive">
  					<table class="table table-bordered table-striped " id="example1">
  						<thead>
- 							<tr class="bg-primary text-white">
+ 							<tr class="text-white" style="background-color:#000084">
  								<th>ID Barang</th>
  								<th>Nama Barang</th>
  								<th>Merk</th>
@@ -64,7 +64,7 @@
  	</div>
  	<div class="col-sm-6">
  		<div class="card card-primary mb-3">
- 			<div class="card-header bg-primary text-white">
+ 			<div class="card-header text-white" style="background-color:#000084">
  				<h5><i class="fa fa-shopping-cart"></i> Keranjang</h5>
  				<div class="float-right">
  					<!-- Button trigger modal -->
@@ -77,7 +77,7 @@
  				<div class="table-responsive">
 				 <table class="table table-bordered table-striped " id="example1">
  						<thead>
- 							<tr class="bg-primary text-white" id="example1">
+ 							<tr class="text-white" style="background-color:#000084" id="example1">
  								<td> No</td>
  								<td> Nama Barang</td>
  								<td style="width:12%;"> Jumlah</td>

@@ -38,7 +38,7 @@ if ($r > 0) {
                         </center>
                     </div>
                     <div class="card-footer" style="color: #000000">
-                        <a href='index.php?page=barang'>Tabel Barang <i class='fa fa-angle-double-right'></i></a>
+                        <a href='index.php?page=barang'>Tabel Nama Barang <i class='fa fa-angle-double-right'></i></a>
                     </div>
                 </div>
                 <!--/grey-card -->
@@ -55,8 +55,7 @@ if ($r > 0) {
                         </center>
                     </div>
                     <div class="card-footer ">
-                        <a href='index.php?page=barang'>Tabel
-                            Barang <i class='fa fa-angle-double-right'></i></a>
+                        <a href='index.php?page=barang'>Tabel Stok Barang <i class='fa fa-angle-double-right'></i></a>
                     </div>
                 </div>
                 <!--/grey-card -->
@@ -73,8 +72,7 @@ if ($r > 0) {
                         </center>
                     </div>
                     <div class="card-footer ">
-                        <a href='index.php?page=laporan'>Tabel
-                            laporan <i class='fa fa-angle-double-right'></i></a>
+                        <a href='index.php?page=laporan'>Tabel Laporan <i class='fa fa-angle-double-right'></i></a>
                     </div>
                 </div>
                 <!--/grey-card -->
@@ -90,8 +88,7 @@ if ($r > 0) {
                         </center>
                     </div>
                     <div class="card-footer ">
-                        <a href='index.php?page=kategori'>Tabel
-                            Kategori <i class='fa fa-angle-double-right'></i></a>
+                        <a href='index.php?page=kategori'>Tabel Kategori Barang<i class='fa fa-angle-double-right'></i></a>
                     </div>
                 </div>
                 <!--/grey-card -->
